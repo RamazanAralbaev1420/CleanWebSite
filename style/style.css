@@ -665,25 +665,31 @@ li:hover:after {
 
 /* mobile */
 .menu-bar {
-  width: 40%;
-  height: 100vh;
-  position: absolute;
-  top: -10px;
-  right: -1200px;
-  background-color: #e6dfdf;
-  transition-duration: 0.3s;
+  width: 450px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: -200px;
+  transform: translate(330px);
+  background-color: #e0dcdc;
+  box-shadow: 0 0 10px 5px #11001159;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px;
+  transition: 0.3s all;
+  z-index: 100;
 }
 
 .active-mobile {
   top: -10px;
-  right: 0;
+  right: 200px;
   transition-duration: 0.3s;
 }
 
 .menu-bar img {
   width: 40px;
   height: 40px;
-  right: 30px;
+  right: 150px;
   top: 30px;
   position: absolute;
 }
@@ -1049,7 +1055,7 @@ li:hover:after {
   }
 
   .menu-bar {
-    width: 50%;
+    width: 500px;
   }
 
   .service-types-card {
@@ -1103,7 +1109,7 @@ li:hover:after {
   }
 
   .menu-bar {
-    width: 60%;
+    width: 90%;
   }
 
   .contacts_info {
@@ -1134,6 +1140,10 @@ li:hover:after {
 @media screen and (max-width: 450px) {
   html {
     font-size: 10px;
+  }
+
+  .menu-bar {
+    width: 100%;
   }
 
   .home_section {
