@@ -13,7 +13,7 @@
 .root {
   width: 100%;
   height: auto;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 input::-webkit-outer-spin-button,
@@ -48,8 +48,7 @@ body {
   background-color: #fff;
   position: sticky;
   top: 0;
-  margin-top: 10px;
-  z-index: 500;
+  z-index: 4500;
 }
 
 .header {
