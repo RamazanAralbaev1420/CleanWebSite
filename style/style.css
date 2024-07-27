@@ -1224,14 +1224,3 @@ li:hover:after {
     height: 30%;
   }
 }
-
-.anim {
-  transform: translateX(-300px);
-  transition-duration: 0.7s;
-}
-
-.active {
-  transform: translateX(0px);
-  opacity: 1;
-  transition-duration: 0.7s;
-}

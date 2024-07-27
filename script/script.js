@@ -31,9 +31,11 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       console.log('keldi');
-      entry.target.classList.add('active');
+      entry.target.classList.add('animate__bounceInLeft');
     }
   });
 });
 
-document.querySelectorAll('.anim').forEach((an) => imageObserver.observe(an));
+document
+  .querySelectorAll('.animate__animated')
+  .forEach((an) => imageObserver.observe(an));
