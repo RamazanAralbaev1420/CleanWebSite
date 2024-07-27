@@ -18,3 +18,22 @@ const closeMobileBar = () => {
 mobile_menu.addEventListener('click', openMobileBar);
 
 menu_bar_close.addEventListener('click', closeMobileBar);
+
+// animated
+
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1,
+};
+
+const imageObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log('keldi');
+      entry.target.classList.add('active');
+    }
+  });
+});
+
+document.querySelectorAll('.anim').forEach((an) => imageObserver.observe(an));
