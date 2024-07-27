@@ -23,8 +23,8 @@ menu_bar_close.addEventListener('click', closeMobileBar);
 
 const options = {
   root: null,
-  rootMargin: '0px',
-  threshold: 2,
+  rootMargin: '10px',
+  threshold: 1,
 };
 
 const imageObserver = new IntersectionObserver((entries, observer) => {
