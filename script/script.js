@@ -3,6 +3,11 @@ const menu_bar = document.querySelector('.menu-bar');
 const menu_bar_close = document.querySelector('.menu-bar-close');
 const root = document.querySelector('.root');
 const actions_header = document.querySelector('.actions-header');
+const login = document.querySelector('.login');
+
+login.addEventListener('click', (e) => {
+  alert('succesfull');
+});
 
 // lang
 const select = document.querySelector('select');
@@ -20,7 +25,7 @@ function changeLanguage() {
   hash = hash.substr(1);
   console.log(hash);
   if (!allLang.includes(hash)) {
-    location.href = window.location.pathname + '#RU';
+    location.href = window.location.pathname + '#UZ';
     location.reload();
   }
   select.value = hash;
