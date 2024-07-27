@@ -1226,13 +1226,12 @@ li:hover:after {
 }
 
 .anim {
-  transform: translateX(-400px);
+  transform: translateX(-300px);
   transition-duration: 0.7s;
-  opacity: 0;
 }
 
 .active {
-  transform: translateX(00px);
+  transform: translateX(0px);
   opacity: 1;
   transition-duration: 0.7s;
 }
