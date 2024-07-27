@@ -257,7 +257,7 @@ li:hover:after {
 /* about */
 
 .about {
-  margin: 40px 0;
+  padding: 40px 0;
 }
 
 .about-title {
@@ -582,6 +582,7 @@ li:hover:after {
   height: 20px;
   justify-content: space-between;
   display: flex;
+  align-items: center;
 }
 
 .check span {
@@ -638,6 +639,12 @@ li:hover:after {
   padding-bottom: 20px;
 }
 
+.footer-act {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 .footer-act span {
   padding: 0 10px;
 }
@@ -653,6 +660,8 @@ li:hover:after {
   background-color: #e4dede;
   border-radius: 30px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 16px;
   padding: 10px 50px;
   font-weight: 600;
@@ -845,6 +854,7 @@ li:hover:after {
 
   .home_title,
   .home_description {
+    width: 90%;
     color: #fff;
   }
 
@@ -916,6 +926,13 @@ li:hover:after {
 
   .container {
     width: 97%;
+  }
+
+  .home_title {
+    font-size: 3rem;
+  }
+  .home_description {
+    font-size: 1.6rem;
   }
 
   .service-types-cards {
