@@ -1,163 +1,56 @@
+const linkYes = `https://amazon.pl/?vote=yes`; //здесь нужно водить линки
+const linkNo = `https://amazon.pl/?vote=no`; //здесь нужно водить линки
+
+
+// // only_mobile container
+window.addEventListener('load', function () {
+  const mobile_content_no = document.querySelector('#mobile_content_no');
+  const mobile_content_yes = document.querySelector('#mobile_content_yes');
+  const container = document.querySelector('#accept_mobile_container');
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const gclid = urlParams.get('gclid');
+
+  mobile_content_no.href = linkNo + gclid;
+  mobile_content_yes.href = linkYes + gclid;
+});
+
+// coockie
+
+window.addEventListener('load', function () {
+  const cookieBanner = document.getElementById('cookieBanner');
+
+  if (!localStorage.getItem('cookiesAccepted')) {
+    cookieBanner.style.display = 'block';
+  }
+
+  document
+    .getElementById('acceptCookies')
+    .addEventListener('click', function () {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.style.display = 'none';
+    });
+});
+
+
+
 const mobile_menu = document.querySelector('.mobile-menu');
 const menu_bar = document.querySelector('.menu-bar');
 const menu_bar_close = document.querySelector('.menu-bar-close');
 const root = document.querySelector('.root');
 const actions_header = document.querySelector('.actions-header');
 const login = document.querySelector('.login');
+const name_input = document.querySelector('.name_input');
+const number_input = document.querySelector('.number_input');
 
 login.addEventListener('click', (e) => {
+  console.log(name_input.value);
+  console.log(number_input.value);
   alert('succesfull');
 });
 
-// lang
-const select = document.querySelector('select');
-const allLang = ['UZ', 'RU'];
-select.addEventListener('change', changeUrlLanguage);
 
-function changeUrlLanguage() {
-  let lang = select.value;
-  location.href = window.location.pathname + '#' + lang;
-  location.reload();
-}
-
-function changeLanguage() {
-  let hash = window.location.hash;
-  hash = hash.substr(1);
-  console.log(hash);
-  if (!allLang.includes(hash)) {
-    location.href = window.location.pathname + '#UZ';
-    location.reload();
-  }
-  select.value = hash;
-  document.querySelectorAll('.lng_btn').forEach((btn) => {
-    btn.innerHTML = langArr['default_btn'][hash];
-  });
-
-  const name_input = document.querySelector('.name_input');
-  hash === 'RU'
-    ? (name_input.placeholder = 'Ваше имя')
-    : (name_input.placeholder = 'ism');
-
-  document.querySelector('title').innerHTML = langArr['unit'][hash];
-  document.querySelector('.lng_title').innerHTML = langArr['home_title'][hash];
-  document.querySelector('.lng_description').innerHTML =
-    langArr['home_description'][hash];
-  document.querySelector('.lng_about_title').innerHTML =
-    langArr['about_title'][hash];
-  document.querySelector('.lng_about_card1_title').innerHTML =
-    langArr['about_card1_title'][hash];
-  document.querySelector('.lng_about_card1_description').innerHTML =
-    langArr['about_card1_description'][hash].toLowerCase();
-  document.querySelector('.lng_about_card2_title').innerHTML =
-    langArr['about_card2_title'][hash];
-  document.querySelector('.lng_about_card2_description').innerHTML =
-    langArr['about_card2_description'][hash].toLowerCase();
-  document.querySelector('.lng_about_card3_title').innerHTML =
-    langArr['about_card3_title'][hash];
-  document.querySelector('.lng_about_card3_description').innerHTML =
-    langArr['about_card3_description'][hash].toLowerCase();
-
-  document.querySelector('.lng_clean_title').innerHTML =
-    langArr['clean_title'][hash];
-  document.querySelector('.lng_clean_description').innerHTML =
-    langArr['clean_description'][hash].toLowerCase();
-
-  document.querySelector('.lng_service_title').innerHTML =
-    langArr['service_title'][hash];
-  document.querySelector('.lng_service_description').innerHTML =
-    langArr['service_description'][hash].toLowerCase();
-
-  document.querySelector('.lng_service_card1_title').innerHTML =
-    langArr['service_card1_title'][hash];
-  document.querySelector('.lng_service_card1_description').innerHTML =
-    langArr['service_card1_description'][hash];
-
-  document.querySelector('.lng_service_card2_title').innerHTML =
-    langArr['service_card2_title'][hash];
-  document.querySelector('.lng_service_card2_description').innerHTML =
-    langArr['service_card2_description'][hash];
-
-  document.querySelector('.lng_title2').innerHTML = langArr['title2'][hash];
-
-  document.querySelector('.lng_service_card3_title').innerHTML =
-    langArr['service_card3_title'][hash];
-  document.querySelector('.lng_service_card3_description').innerHTML =
-    langArr['service_card3_description'][hash];
-  document.querySelector('.lng_service_card3_title').innerHTML =
-    langArr['service_card3_title'][hash];
-  document.querySelector('.lng_service_card3_description').innerHTML =
-    langArr['service_card3_description'][hash];
-
-  // klapalar
-
-  document.querySelector('.lng_service_klap1_title').innerHTML =
-    langArr['service_klap1_title'][hash];
-  document.querySelector('.lng_service_klap1_description').innerHTML =
-    langArr['service_klap1_description'][hash];
-
-  document.querySelector('.lng_service_klap2_title').innerHTML =
-    langArr['service_klap2_title'][hash];
-  document.querySelector('.lng_service_klap2_description').innerHTML =
-    langArr['service_klap2_description'][hash];
-
-  document.querySelector('.lng_service_klap3_title').innerHTML =
-    langArr['service_klap3_title'][hash];
-  document.querySelector('.lng_service_klap3_description').innerHTML =
-    langArr['service_klap3_description'][hash];
-
-  document.querySelector('.lng_service_klap4_title').innerHTML =
-    langArr['service_klap4_title'][hash];
-  document.querySelector('.lng_service_klap4_description').innerHTML =
-    langArr['service_klap4_description'][hash];
-
-  document.querySelector('.lng_service_klap5_title').innerHTML =
-    langArr['service_klap5_title'][hash];
-  document.querySelector('.lng_service_klap5_description').innerHTML =
-    langArr['service_klap5_description'][hash];
-
-  document.querySelector('.lng_cleanM_title').innerHTML =
-    langArr['cleanM_title'][hash];
-
-  document.querySelector('.lng_faq').innerHTML = langArr['faq'][hash];
-
-  document.querySelector('.lng_slid1_title').innerHTML =
-    langArr['lng_slid1_title'][hash];
-  document.querySelector('.lng_slid1_description').innerHTML =
-    langArr['lng_slid1_description'][hash];
-
-  document.querySelector('.lng_slid2_title').innerHTML =
-    langArr['lng_slid2_title'][hash];
-  document.querySelector('.lng_slid2_description').innerHTML =
-    langArr['lng_slid2_description'][hash];
-
-  document.querySelector('.lng_slid3_title').innerHTML =
-    langArr['lng_slid3_title'][hash];
-  document.querySelector('.lng_slid3_description').innerHTML =
-    langArr['lng_slid3_description'][hash];
-
-  document.querySelector('.lng_ozim').innerHTML = langArr['lng_ozim'][hash];
-  document.querySelector('.lng_pol').innerHTML = langArr['lng_pol'][hash];
-  document.querySelector('.lng_contact_text').innerHTML =
-    langArr['lng_contact_text'][hash];
-  document.querySelector('.lng_address').innerHTML =
-    langArr['lng_address'][hash];
-  document.querySelector('.lng_login').innerHTML = langArr['lng_login'][hash];
-
-  document.querySelectorAll('.lng_menu_home').forEach((item) => {
-    item.innerHTML = langArr['lng_menu_home'][hash];
-  });
-  document.querySelectorAll('.lng_menu_service').forEach((item) => {
-    item.innerHTML = langArr['lng_menu_service'][hash];
-  });
-  document.querySelectorAll('.lng_menu_about').forEach((item) => {
-    item.innerHTML = langArr['lng_menu_about'][hash];
-  });
-  document.querySelectorAll('.lng_menu_contacts').forEach((item) => {
-    item.innerHTML = langArr['lng_menu_contacts'][hash];
-  });
-}
-
-changeLanguage();
 
 // ====
 const openMobileBar = () => {
