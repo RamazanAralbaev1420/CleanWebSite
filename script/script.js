@@ -69,21 +69,3 @@ mobile_menu.addEventListener('click', openMobileBar);
 menu_bar_close.addEventListener('click', closeMobileBar);
 
 // animated
-
-const options = {
-  root: null,
-  rootMargin: '10px',
-  threshold: 1,
-};
-
-const imageObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate__bounceInLeft');
-    }
-  });
-});
-
-document
-  .querySelectorAll('.animate__animated')
-  .forEach((an) => imageObserver.observe(an));
