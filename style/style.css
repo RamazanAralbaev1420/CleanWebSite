@@ -555,7 +555,7 @@ li:hover:after {
   height: 450px;
   display: flex;
   justify-content: space-between;
-  background-image: url(../assets/pexels-shvetsa-3845981.jpg);
+  background-image: url(../assets/cleanM-back.svg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 12px;
@@ -624,9 +624,11 @@ li:hover:after {
 
 .contacts_info {
   width: 55%;
+  background-image: url('../assets/contacts-person.svg');
   background-repeat: no-repeat;
   background-position: right center;
-  color: #000;
+  background-size: 100% 100%;
+  color: #fff;
   padding: 60px 0;
 }
 
