@@ -624,10 +624,10 @@ li:hover:after {
 
 .contacts_info {
   width: 55%;
-  background-image: url('../assets/contacts-person.svg');
+  background-image: url('../assets/contacts-right-back-removebg-preview.png');
   background-repeat: no-repeat;
   background-position: right center;
-  background-size: 100% 100%;
+  background-size: contain;
   color: #fff;
   padding: 60px 0;
 }
